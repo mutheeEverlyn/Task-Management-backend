@@ -39,9 +39,9 @@ export const AuthOnUsersTable = pgTable("auth_on_users", {
     })
   }));
 
-  export type tiUsers = typeof usersTable.$inferInsert;
+export type tiUsers = typeof usersTable.$inferInsert;
 export type tsUsers = typeof usersTable.$inferSelect;
 export type tiTask = typeof taskTable.$inferInsert;
 export type tsTask = typeof taskTable.$inferSelect;
-type tiAuthOnUsers = typeof AuthOnUsersTable.$inferInsert;
+export type tiAuthOnUsers = typeof AuthOnUsersTable.$inferInsert;
 export type tsAuthOnUsers = typeof AuthOnUsersTable.$inferSelect;
