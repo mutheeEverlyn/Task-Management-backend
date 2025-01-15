@@ -38,7 +38,13 @@ export const AuthOnUsersTable = pgTable("auth_on_users", {
         references: [AuthOnUsersTable.user_id]
     })
   }));
-
+ 
+  export const UsersTaskRelations = relations(taskTable, ({ many,one }) => ({
+    user: one(usersTable,{
+      fields: [taskTable.user_id],
+      references: [usersTable.user_id],
+    })
+  }))
 export type tiUsers = typeof usersTable.$inferInsert;
 export type tsUsers = typeof usersTable.$inferSelect;
 export type tiTask = typeof taskTable.$inferInsert;
