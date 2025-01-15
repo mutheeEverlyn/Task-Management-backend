@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthOnUsersRelations = exports.AuthOnUsersTable = exports.taskTable = exports.usersTable = exports.roleEnum = void 0;
+exports.UsersTaskRelations = exports.AuthOnUsersRelations = exports.AuthOnUsersTable = exports.taskTable = exports.usersTable = exports.roleEnum = void 0;
 const pg_core_1 = require("drizzle-orm/pg-core");
 const drizzle_orm_1 = require("drizzle-orm");
 exports.roleEnum = (0, pg_core_1.pgEnum)("role", ["admin", "user", "userAdminRoleAuth"]);
@@ -35,5 +35,11 @@ exports.AuthOnUsersRelations = (0, drizzle_orm_1.relations)(exports.usersTable, 
     user: one(exports.AuthOnUsersTable, {
         fields: [exports.usersTable.user_id],
         references: [exports.AuthOnUsersTable.user_id]
+    })
+}));
+exports.UsersTaskRelations = (0, drizzle_orm_1.relations)(exports.taskTable, ({ many, one }) => ({
+    user: one(exports.usersTable, {
+        fields: [exports.taskTable.user_id],
+        references: [exports.usersTable.user_id],
     })
 }));
