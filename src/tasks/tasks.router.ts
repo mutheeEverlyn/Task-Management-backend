@@ -18,7 +18,7 @@ tasksRouter.post("/tasks",zValidator('json',taskSchema,(result,c) =>{
     }
 }), userRoleAuth,createTasks)
 
-tasksRouter.put("/tasks/:id",userAdminRoleAuth, updateTasks)
+tasksRouter.put("/tasks/:id",userRoleAuth, updateTasks)
 
-tasksRouter.delete("/tasks/:id",adminRoleAuth, deleteTasks)
+tasksRouter.delete("/tasks/:id",userRoleAuth, deleteTasks)
 

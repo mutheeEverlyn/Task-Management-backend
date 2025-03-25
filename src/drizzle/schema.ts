@@ -20,6 +20,7 @@ export const taskTable=pgTable("task_table",{
     task_id:serial("task_id").primaryKey(),
     user_id:integer("user_id").notNull().references(()=>usersTable.user_id,{onDelete:"cascade"}),
     task:text("task"),
+    status:text("status"),
     created_at: timestamp("created_at", { mode: "string" }).notNull().defaultNow(),
   updated_at: timestamp("updated_at", { mode: "string" }).notNull().defaultNow(),
 });

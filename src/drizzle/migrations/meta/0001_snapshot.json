@@ -1,6 +1,6 @@
 {
-  "id": "e2807215-6c0b-4915-aeda-1ee90010fe2f",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "a8c4e973-2420-42af-871a-5c8e8069976d",
+  "prevId": "e2807215-6c0b-4915-aeda-1ee90010fe2f",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -81,6 +81,12 @@
         },
         "task": {
           "name": "task",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "status": {
+          "name": "status",
           "type": "text",
           "primaryKey": false,
           "notNull": false

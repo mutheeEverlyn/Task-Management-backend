@@ -25,6 +25,8 @@ export const taskData = async () => {
         columns:{
             user_id:true,
             task_id:true,
+            status:true,
+            task:true,
            updated_at:true,
            created_at:true,
         },with:{

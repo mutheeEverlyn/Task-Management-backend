@@ -13,6 +13,7 @@ export const userSchema = z.object({
 export const taskSchema=z.object({
     task:z.string(),
     user_id:z.number(),
+    status:z.string(),
     created_at:z.string().optional(),
     updated_at:z.string().optional()
 })

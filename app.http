@@ -2,16 +2,24 @@ GET http://localhost:8000/ok
 ###
 GET http://localhost:8000/timeout
 ###
+PUT http://localhost:8000/users/6
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJldmFoQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc0MjkzMzgxM30.YdYvaJ-YsFtqmQCVkA88bD3YG97DksgQZV67vATygQY
+Content-Type: application/json
+
+{
+    "user_id": 2
+}
+###
 POST http://localhost:8000/register
 Content-Type: application/json
 
 {
-     "full_name":"Everlyn Muthoni",
-     "email":"junevamdee@gmail.com",
+     "full_name":"Peter Kimenju",
+     "email":"peter@gmail.com",
     "password":"password",
-    "contact_phone":"09876540987",
-    "address":"Nyeri",
-    "role":"userAdminRoleAuth"
+    "contact_phone":"234567",
+    "address":"Kiambu",
+    "role":"user"
 }
 
 ###
@@ -19,6 +27,6 @@ POST http://localhost:8000/login
 Content-Type: application/json
 
 {
-    "email": "paul@gmail.com",
+    "email": "evah@gmail.com",
     "password":"password"
 }
